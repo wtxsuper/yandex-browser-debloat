@@ -1,0 +1,132 @@
+Windows Registry Editor Version 5.00
+
+;; =========================================================================
+;; ОСНОВНЫЕ ПОЛИТИКИ ПРИВАТНОСТИ, БЕЗОПАСНОСТИ И ТЕЛЕМЕТРИИ
+;; =========================================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\YandexBrowser]
+
+;; --- 1. Телеметрия и обмен данными с Яндексом ---
+"StatisticsReporting"=dword:00000000
+"CrashesReporting"=dword:00000000
+"SpellCheckServiceEnabled"=dword:00000000
+"SafeBrowsingExtendedReportingEnabled"=dword:00000000
+"YandexUserFeedbackMode"=dword:00000000
+"AlternateErrorPagesEnabled"=dword:00000000
+"SearchSuggestEnabled"=dword:00000000
+"YandexButtonDisable"=dword:00000001
+"InstaserpDisabled"=dword:00000001
+"EnableSearchByImageInSystemMenu"=dword:00000000
+"BackgroundUpdateAllowed"=dword:00000000
+
+;; --- 2. ИИ, Нейросети и Алиса ---
+"YandexAliceMsgDisable"=dword:00000001
+"NeuroQuestionEnabled"=dword:00000000
+"YandexNeuroEdit"=dword:00000000
+"NeuroNtpTools"=dword:00000000
+"YandexSummarizationDisable"=dword:00000001
+"YandexVideoSummarization"=dword:00000000
+"YandexCloudLanguageDetectEnabled"=dword:00000000
+"YandexTranslateCursor"=dword:00000000
+"TranslateEnabled"=dword:00000000
+"YandexTranslateVideosButton"=dword:00000000
+"YandexTranslateImagesButton"=dword:00000000
+"YandexTextToSpeechButton"=dword:00000000
+
+;; --- 3. E-Commerce и Экран новой вкладки ---
+"YandexEcomEnabled"=dword:00000000
+"CloudDocumentsDisabled"=dword:00000001
+"NtpAdsDisabled"=dword:00000001
+"NtpContentDisabled"=dword:00000001
+"NtpNotificationsDisable"=dword:00000001
+"NtpWallpaperSelectDisable"=dword:00000001
+
+;; --- 4. Защита от слежки, фингерпринтинга и WebRTC ---
+"BlockThirdPartyCookies"=dword:00000001
+"RefererEnabledOnFaviconRequests"=dword:00000000
+"WebRtcIPHandling"="default_public_interface_only"
+"NetworkPredictionOptions"=dword:00000002
+"DefaultLocalFontsSetting"=dword:00000002
+"DefaultClipboardSetting"=dword:00000001
+"DefaultWindowManagementSetting"=dword:00000002
+"EnterpriseHardwarePlatformAPIEnabled"=dword:00000000
+"DisableScreenshots"=dword:00000001
+"YandexAdblock"=dword:00000001
+"YandexAntishock"=dword:00000001
+"AutoplayAllowed"=dword:00000000
+"DnsOverHttpsMode"="automatic"
+"DnsOverHttpsTemplates"="https://dns.quad9.net/dns-query"
+
+;; --- 5. Запрет сайтам доступа к датчикам и файлам ---
+"DefaultGeolocationSetting"=dword:00000002
+"DefaultSensorsSetting"=dword:00000002
+"DefaultWebUsbGuardSetting"=dword:00000002
+"DefaultWebBluetoothGuardSetting"=dword:00000002
+"DefaultSerialGuardSetting"=dword:00000002
+"DefaultWebHidGuardSetting"=dword:00000002
+"DefaultFileSystemReadGuardSetting"=dword:00000002
+"DefaultFileSystemWriteGuardSetting"=dword:00000002
+"EnableMediaRouter"=dword:00000000
+"DefaultNotificationsSetting"=dword:00000002
+
+;; --- 6. Безопасность и изоляция ---
+"BlockExternalExtensions"=dword:00000001
+"SitePerProcess"=dword:00000001
+"AudioSandboxEnabled"=dword:00000001
+"RemoteDebuggingAllowed"=dword:00000000
+"AllowCrossOriginAuthPrompt"=dword:00000000
+"BasicAuthOverHttpEnabled"=dword:00000000
+"GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
+"EnableOnlineRevocationChecks"=dword:00000000
+"HttpsUpgradesEnabled"=dword:00000001
+"SSLErrorOverrideAllowed"=dword:00000000
+"DisableSafeBrowsingProceedAnyway"=dword:00000001
+"CommandLineFlagSecurityWarningsEnabled"=dword:00000001
+"RendererCodeIntegrityEnabled"=dword:00000001
+"PrivateNetworkAccessRespectPreflightResultsEnabled"=dword:00000001
+
+;; --- 7. Фоновые процессы и отвязка от аккаунта ---
+"BackgroundModeEnabled"=dword:00000000
+"YandexBackgroundModeDisableRestart"=dword:00000001
+"YandexAutoLaunchMode"="never"
+"PromptForDownloadLocation"=dword:00000001
+"YandexDisableID"=dword:00000001
+
+;; =========================================================================
+;; 8. АНОНИМНОСТЬ И АВТОМАТИЧЕСКОЕ УДАЛЕНИЕ ДАННЫХ ПРИ ВЫХОДЕ
+;; =========================================================================
+; Не сохранять пароли в браузере (0 = Disabled)
+"PasswordManagerEnabled"=dword:00000000
+
+; Отключить автозаполнение форм и адресов (0 = Disabled)
+"AutofillAddressEnabled"=dword:00000000
+
+; Отключить автозаполнение банковских карт (0 = Disabled)
+"AutofillCreditCardEnabled"=dword:00000000
+
+; Запретить запись истории просмотров на диск вообще (1 = Не сохранять историю)
+"SavingBrowserHistoryDisabled"=dword:00000001
+
+; Хранить Cookie только до закрытия браузера (4 = Session Only)
+"DefaultCookiesSetting"=dword:00000004
+
+
+;; =========================================================================
+;; 9. СПИСОК ТИПОВ ДАННЫХ ДЛЯ ГАРАНТИРОВАННОЙ ОЧИСТКИ ПРИ ВЫХОДЕ
+;; =========================================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\YandexBrowser\ClearBrowsingDataOnExitList]
+; Удалять историю посещений
+"1"="browsing_history"
+; Удалять список скачанных файлов
+"2"="download_history"
+; Удалять Cookie и локальные хранилища сайтов (LocalStorage/IndexedDB)
+"3"="cookies_and_other_site_data"
+; Очищать дисковый кеш, картинки и временные файлы
+"4"="cached_images_and_files"
+; Удалять данные автозаполнения форм
+"5"="autofill"
+; Очищать сохраненные пароли сессий
+"6"="password_signin"
+; Сбрасывать временные настройки сайтов
+"7"="site_settings"
+; Удалять данные локальных веб-приложений
+"8"="hosted_app_data"
